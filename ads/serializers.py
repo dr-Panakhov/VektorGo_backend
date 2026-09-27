@@ -15,7 +15,11 @@ class AdSerializer(serializers.ModelSerializer):
     author_id = serializers.ReadOnlyField(source='author.id')
     class Meta:
         model = Ad
-        fields = ['id', 'title', 'city', 'phone_number', 'description', 'price', 'currency', 'author', 'author_id', 'author_name', 'created_at', 'images', 'is_favorite']
+        fields = [
+            'id', 'title', 'city', 'phone_number', 'description', 'price', 'currency',
+            'category', 'is_urgent', 'author', 'author_id', 'author_name',
+            'created_at', 'images', 'is_favorite',
+        ]
 
     def get_is_favorite(self, obj): 
         request = self.context.get('request')

@@ -2,6 +2,7 @@ from rest_framework import viewsets, permissions
 from rest_framework.parsers import JSONParser, FormParser, MultiPartParser
 from .models import Ad
 from .serializers import AdSerializer
+from .filters import apply_ad_filters
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
@@ -10,6 +11,12 @@ class AdViewSet(viewsets.ModelViewSet):
     serializer_class = AdSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     parser_classes = [JSONParser, FormParser, MultiPartParser]
+
+    def get_queryset(self):
+        queryset = Ad.objects.select_related('author').all()
+        if getattr(self, 'action', None) != 'list':
+            return queryset.order_by('-created_at')
+        return apply_ad_filters(queryset, self.request.query_params)
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
