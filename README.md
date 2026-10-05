@@ -42,4 +42,5 @@ docker exec -it my_backend python manage.py migrate
 ```
 ### 📦 Деплой на сервер (Production)
 
-**Проект настроен для бесшовного деплоя на VPS (Debian/Ubuntu) с использованием готовых образов и docker-compose. Все контейнеры имеют политику restart: unless-stopped.**
+Проект настроен для **бесшовного деплоя** на VPS (Debian/Ubuntu) с использованием готовых образов и `docker-compose`. Все контейнеры имеют политику `restart: unless-stopped`.
+
