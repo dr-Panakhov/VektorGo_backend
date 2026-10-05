@@ -27,8 +27,19 @@ API-сервер для локального маркетплейса **VektorGo
 git clone [https://github.com/dr-Panakhov/vektorgo-backend.git](https://github.com/dr-Panakhov/vektorgo-backend.git)
 cd vektorgo-backend
 ```
-**2. Настройте переменные окружения
-Скопируйте шаблон .env.example в рабочий .env и пропишите доступы к БД и секретные ключи**
+**2. Настройте переменные окружения**
 ```bash
+# Скопируйте шаблон .env.example в рабочий .env и пропишите доступы к БД и секретные ключи
 cp .env.example .env
 ```
+**3. Поднимите контейнеры**
+```bash
+docker-compose up -d --build
+```
+**4. Примените миграции**
+```bash
+docker exec -it my_backend python manage.py migrate
+```
+### 📦 Деплой на сервер (Production)
+
+**Проект настроен для бесшовного деплоя на VPS (Debian/Ubuntu) с использованием готовых образов и docker-compose. Все контейнеры имеют политику restart: unless-stopped.**
