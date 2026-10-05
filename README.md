@@ -27,8 +27,8 @@ API-сервер для локального маркетплейса **VektorGo
 git clone [https://github.com/dr-Panakhov/vektorgo-backend.git](https://github.com/dr-Panakhov/vektorgo-backend.git)
 cd vektorgo-backend
 ```
-**2. Настройте переменные окружения**
-# Скопируйте шаблон .env.example в рабочий .env и пропишите доступы к БД и секретные ключи
+**2. Настройте переменные окружения
+Скопируйте шаблон .env.example в рабочий .env и пропишите доступы к БД и секретные ключи**
 ```bash
 cp .env.example .env
 ```
