@@ -24,7 +24,7 @@ API-сервер для локального маркетплейса **VektorGo
 
 **1. Склонируйте репозиторий:**
 ```bash
-git clone [https://github.com/dr-Panakhov/vektorgo-backend.git](https://github.com/dr-Panakhov/vektorgo-backend.git)
+git clone https://github.com/dr-Panakhov/vektorgo-backend.git
 cd vektorgo-backend
 ```
 **2. Настройте переменные окружения**
